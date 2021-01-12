@@ -9,18 +9,6 @@ const app = express();
 // body parser
 app.use(bodyParser.json());
 
-// create table
-db.pool.query(
-  `CREATE TABLE lists (
-    id INTEGER AUTO_INCREMENT,
-    value TEXT,
-    PRIMARY KEY (id)
-)`,
-  (err, results, fileds) => {
-    console.log("results", results);
-  }
-);
-
 // APIs
 // lists
 app.get("/api/values", function (req, res) {
